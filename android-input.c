@@ -213,7 +213,7 @@ int main(void)
 
     //TODO: get this from a config file or the command line options.
     const char *cmd = "/usr/bin/adb";
-    while (true)
+    while (1)
     {
         c = handle_character_event(cmd);
 
