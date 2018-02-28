@@ -37,5 +37,5 @@ ehthumbs.db
 Thumbs.db
 
 # backups #
-.bak
-.swp
+*.bak
+*.swp
