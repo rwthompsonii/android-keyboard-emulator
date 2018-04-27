@@ -170,6 +170,34 @@ char handle_character_event(const char * cmd)
                 printf("third value: %d\n", (int)third);
             }
         }
+        else if ((int)ret == 'a' || (int)ret == 'A')
+        {
+            printf("\nLEFT key pressed.\n");
+            (void)sprintf(cmd_buffer, "%s shell input keyevent %d", cmd, KEYCODE_DPAD_LEFT);
+            printf("cmd_buffer: %s.\n", cmd_buffer);
+            (void)system(cmd_buffer);            
+        }
+        else if ((int)ret == 's' || (int)ret == 'S')
+        {
+            printf("\nDOWN key pressed.\n");
+            (void)sprintf(cmd_buffer, "%s shell input keyevent %d", cmd, KEYCODE_DPAD_DOWN);
+            printf("cmd_buffer: %s.\n", cmd_buffer);
+            (void)system(cmd_buffer);            
+        }
+        else if ((int)ret == 'd' || (int)ret == 'D')
+        {
+            printf("\nRIGHT key pressed.\n");
+            (void)sprintf(cmd_buffer, "%s shell input keyevent %d", cmd, KEYCODE_DPAD_RIGHT);
+            printf("cmd_buffer: %s.\n", cmd_buffer);
+            (void)system(cmd_buffer);            
+        }
+        else if ((int)ret == 'w' || (int)ret == 'W')
+        {
+            printf("\nUP key pressed.\n");
+            (void)sprintf(cmd_buffer, "%s shell input keyevent %d", cmd, KEYCODE_DPAD_UP);
+            printf("cmd_buffer: %s.\n", cmd_buffer);
+            (void)system(cmd_buffer);            
+        }
         else if ((int)ret == 4)
         {
             printf("\nctrl+d pressed.  value: %d.\n", (int)ret);
@@ -212,7 +240,7 @@ int main(void)
     char c = '\0';
 
     //TODO: get this from a config file or the command line options.
-    const char *cmd = "/usr/bin/adb";
+    const char *cmd = "adb";
     while (1)
     {
         c = handle_character_event(cmd);
